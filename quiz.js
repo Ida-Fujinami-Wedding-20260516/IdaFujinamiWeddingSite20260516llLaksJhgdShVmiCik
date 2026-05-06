@@ -97,7 +97,8 @@ function renderQuizQuestion() {
       <div class="quiz-no">問題 ${no}</div>
       <div class="quiz-question">${q.question.replace(/\n/g, '<br>')}</div>
       ${visualHtml}
-      <div class="quiz-hint">💡 ヒント：${q.hint}</div>
+      <button class="quiz-hint-btn" onclick="showQuizHint(this)">💡 ヒントを見る</button>
+      <div class="quiz-hint" id="quizHint">${q.hint}</div>
 
       <div class="quiz-input-row">
         <input class="quiz-input" id="quizInput" type="text"
@@ -121,6 +122,12 @@ function renderQuizQuestion() {
     const inp = document.getElementById('quizInput');
     if (inp) inp.focus();
   }, 300);
+}
+
+/* ヒントを表示 */
+function showQuizHint(btn) {
+  document.getElementById('quizHint').classList.add('show');
+  btn.style.display = 'none';
 }
 
 /* 答えを正規化（全角→半角・カタカナ→ひらがな・スペース除去） */

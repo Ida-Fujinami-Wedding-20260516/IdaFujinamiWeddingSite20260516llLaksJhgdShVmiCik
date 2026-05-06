@@ -33,36 +33,51 @@ const LOCKED_TABS = ['links'];
    不要なサービスは url を "#" のままにしてください
    ======================================================= */
 const PLAYLIST_LINKS = [
-  { service: 'Apple Music', icon: '🎵', color: '#fc3c44', url: '#' },
-  { service: 'Spotify',     icon: '🎧', color: '#1db954', url: '#' },
+  { service: 'Apple Music', icon: '🎵', color: '#fc3c44', url: 'https://music.apple.com/jp/playlist/2026-5-16-keisuke-yui-wedding-partys-music/pl.u-NpXmzkgFmp1xe5d' },
+  { service: 'Spotify',     icon: '🎧', color: '#1db954', url: 'https://open.spotify.com/playlist/78SOdE2PiGupIiAKPvFLId?si=lrNFEhxHRZ2q4hU8xsZprw&pi=jgh1MZa-R0q-5' },
 ];
 
 const PLAYLIST = [
-  { scene: "入場",         icon: "🎵", songs: [
-    { title: "曲名を入力してください", artist: "アーティスト名" },
+  { scene: "オープニング/入場",         icon: "🎵", songs: [
+    { title: "晴る", artist: "ヨルシカ" },
+  ]},
+  { scene: "ウェルカムスピーチ",         icon: "🎤", songs: [
+    { title: "きときと -四本足の踊り", artist: "高木正勝" },
   ]},
   { scene: "乾杯",         icon: "🥂", songs: [
-    { title: "曲名を入力してください", artist: "アーティスト名" },
+    { title: "ココロの地図", artist: "BoyStyle" },
+  ]},
+  { scene: "プロフィールムービー",         icon: "ℹ️", songs: [
+    { title: "心絵", artist: "ロードオブメジャー" },
   ]},
   { scene: "歓談",         icon: "🎶", songs: [
-    { title: "曲名を入力してください", artist: "アーティスト名" },
-    { title: "曲名を入力してください", artist: "アーティスト名" },
-    { title: "曲名を入力してください", artist: "アーティスト名" },
-    { title: "曲名を入力してください", artist: "アーティスト名" },
+    { title: "虹", artist: "Aqua Timez" },
+    { title: "Aoi", artist: "サカナクション" },
+    { title: "以心伝心", artist: "ORANGE RANGE" },
+    { title: "アーケード", artist: "カネコアヤノ" },
+    { title: "風神", artist: "Vaundy" },
+    { title: "君と歩いた帰り道", artist: "ちくわしなちくちくわ" },
+    { title: "Blue Jeans", artist: "HANA" },
+    { title: "ソラニン", artist: "ASIAN KUNG-FU GENERATION" },
+    { title: "PIKA☆☆NCHI DOUBLE", artist: "嵐" },
+    { title: "餃子", artist: "TOMOO" },
+    { title: "口約束", artist: "乃木坂46" },
   ]},
   { scene: "インタビュー", icon: "🎤", songs: [
-    { title: "曲名を入力してください", artist: "アーティスト名" },
-    { title: "曲名を入力してください", artist: "アーティスト名" },
+    { title: "ヒーロー", artist: "FUNKY MONKEY BABYS" },
   ]},
   { scene: "結婚証明書",   icon: "💍", songs: [
-    { title: "曲名を入力してください", artist: "アーティスト名" },
-    { title: "曲名を入力してください", artist: "アーティスト名" },
-    { title: "曲名を入力してください", artist: "アーティスト名" },
-    { title: "曲名を入力してください", artist: "アーティスト名" },
-    { title: "曲名を入力してください", artist: "アーティスト名" },
+    { title: "Masterpiece", artist: "KOTORI" },
+    { title: "ヒカレ", artist: "ゆず" },
+    { title: "ヒカリヘ", artist: "miwa" },
+    { title: "交感神経優位", artist: "乃木坂46" },
+    { title: "恋文〜ラブレター〜", artist: "GreeeeN" },
   ]},
   { scene: "退場",         icon: "🌅", songs: [
-    { title: "曲名を入力してください", artist: "アーティスト名" },
+    { title: "感謝カンゲキ雨嵐", artist: "嵐" },
+    { title: "BOY MEETS GIRL", artist: "TRF" },
+    { title: "君って", artist: "西野カナ" },
+    { title: "マイガール", artist: "嵐" },
   ]},
 ];
 
