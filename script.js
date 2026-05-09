@@ -233,14 +233,14 @@ function searchMessage() {
   }
 }
 
-/* スプラッシュスクリーン：4秒表示 → 2秒でフェードアウト */
+/* スプラッシュスクリーン：3秒表示 → 2秒でフェードアウト */
 (function () {
   const splash = document.getElementById('splash');
   if (!splash) return;
   setTimeout(() => {
     splash.classList.add('fade-out');
-    splash.addEventListener('transitionend', () => splash.classList.add('hidden'), { once: true });
-  }, 4000);
+    setTimeout(() => splash.classList.add('hidden'), 2000);
+  }, 3000);
 })();
 
 /* Enter キーで検索 */
