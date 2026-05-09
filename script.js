@@ -21,8 +21,8 @@ const LOCKED_TABS = ['links'];
        scene: "シーン名",
        icon: "絵文字",
        songs: [
-         { title: "曲名", artist: "アーティスト名" },
-         { title: "曲名2", artist: "アーティスト名2" },  // 複数曲ある場合は続けて追加
+         { title: "曲名", artist: "アーティスト名", reason: "選んだ理由をここに書く" },
+         { title: "曲名2", artist: "アーティスト名2" },  // reason がない曲はタップしても何も起きない
        ]
      },
    ======================================================= */
@@ -81,6 +81,11 @@ const PLAYLIST = [
   ]},
 ];
 
+/* 理由の開閉 */
+function toggleReason(wrap) {
+  wrap.classList.toggle('open');
+}
+
 /* 曲カードを描画 */
 function renderPlaylist() {
   const container = document.getElementById('musicList');
@@ -91,7 +96,15 @@ function renderPlaylist() {
       <div class="music-jacket">${scene.icon}</div>
       <div class="music-info">
         <div class="music-scene">${scene.scene}</div>
-        ${scene.songs.map(s => `
+        ${scene.songs.map(s => s.reason ? `
+          <div class="music-song-wrap has-reason" onclick="toggleReason(this)">
+            <div class="music-song-header">
+              <span>${s.title} / ${s.artist}</span>
+              <span class="music-song-chevron">›</span>
+            </div>
+            <div class="music-song-reason">${s.reason}</div>
+          </div>
+        ` : `
           <div class="music-song">${s.title} / ${s.artist}</div>
         `).join('')}
       </div>
