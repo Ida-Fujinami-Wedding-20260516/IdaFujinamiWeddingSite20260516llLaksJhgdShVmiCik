@@ -520,26 +520,28 @@ body::before {
 .music-scene { font-size: 10px; color: var(--gold); letter-spacing: 0.15em; margin-bottom: 6px; text-transform: uppercase; }
 .music-song { font-family: 'Noto Serif JP', serif; font-size: 13px; font-weight: 400; margin-bottom: 3px; }
 
-.music-song-wrap { margin-bottom: 3px; }
-.music-song-wrap.has-reason { cursor: pointer; -webkit-tap-highlight-color: transparent; }
-.music-song-header {
-  display: flex; align-items: center; justify-content: space-between; gap: 6px;
-  font-family: 'Noto Serif JP', serif; font-size: 13px; font-weight: 400;
-  padding: 2px 0;
+.music-card.has-reason { cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.music-card.has-reason:active { opacity: 0.7; }
+
+.music-scene-row {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 6px;
 }
-.music-song-wrap.has-reason:active .music-song-header { opacity: 0.6; }
-.music-song-chevron {
+.music-scene-chevron {
   font-size: 16px; color: var(--gold); flex-shrink: 0;
   display: inline-block; transition: transform 0.25s ease;
 }
-.music-song-wrap.open .music-song-chevron { transform: rotate(90deg); }
-.music-song-reason {
+.music-card.open .music-scene-chevron { transform: rotate(90deg); }
+
+.music-scene-reason {
   font-size: 12px; color: var(--gray); line-height: 1.75;
-  max-height: 0; overflow: hidden; padding: 0 0 0 2px;
-  transition: max-height 0.3s ease, padding 0.3s ease;
-  border-left: 2px solid var(--gold-light);
+  max-height: 0; overflow: hidden; margin-top: 0;
+  transition: max-height 0.35s ease, margin-top 0.35s ease;
+  border-left: 2px solid var(--gold-light); padding-left: 0;
 }
-.music-song-wrap.open .music-song-reason { max-height: 200px; padding: 6px 0 4px 8px; }
+.music-card.open .music-scene-reason {
+  max-height: 300px; margin-top: 8px; padding-left: 8px;
+}
 
 .music-playlist-links { margin-top: 24px; }
 .music-playlist-label {
