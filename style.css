@@ -443,11 +443,10 @@ body::before {
   padding: 11px 14px; font-size: 13px; line-height: 1.85; color: var(--brown);
 }
 .talk-row.right .talk-bubble {
-  border-radius: 12px 0 12px 12px;
-  background: var(--bubble-r); float: right;
+  border-radius: 0 12px 12px 12px;
+  background: var(--bubble-r);
 }
-.talk-row.right .talk-bwrap { text-align: right; }
-.talk-row.right .talk-bwrap::after { content: ''; display: block; clear: both; }
+.talk-row.right .talk-person { text-align: left; }
 
 /* =========================================
    §4 謎解き — 入力欄
