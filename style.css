@@ -445,6 +445,7 @@ body::before {
 .talk-row.right .talk-bubble {
   border-radius: 0 12px 12px 12px;
   background: var(--bubble-r);
+  text-align: left;
 }
 .talk-row.right .talk-person { text-align: left; }
 
