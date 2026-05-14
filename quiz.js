@@ -6,12 +6,12 @@
 const QUIZ = [
   {
     no: 1,
-    question: 'まずは佑衣ちゃんの行きたいところをリサーチ！\n佑衣ちゃん 旅行でいきたいところはある？\n\n「たくさんあるってこの前言ったでしょ！」\n\n（やべ…そうだっけ…）\n\n「しょうがないなあ、\nこれを解けば私の行きたい都道府県がわかるよ！」',
+    question: 'まずはゆいちゃんの行きたいところをリサーチ！\nゆいちゃん 旅行でいきたいところはある？\n\n「たくさんあるってこの前言ったでしょ！」\n\n（やべ…そうだっけ…）\n\n「しょうがないなあ、\nこれを解けば私の行きたい都道府県がわかるよ！」',
     image: '謎1.jpg',
     hint: 'イラストは「たぬき」「毛蟹」「ナイフ」「うがい」です',
     hint2: '文章になった時、情報はどこかになかったかな',
     answer: ['北海道', 'ほっかいどう'],
-    explanation: 'わかった！\nたぬきは「た」を抜く\n毛蟹は「け」を「に」に変える\nナイフは「ふ」がないってこと\nうがいは「う」を「い」に変えるってことか\nそうすると「にいのこなんのせいちがせいかい」となる\n僕のコナンの映画ランキングは100万ドルの五稜星だから\n正解は北海道だね！\n\n「正解！北海道はまだ行ったことないから行ってみたいの！」'
+    explanation: 'わかった！\nたぬきは「た」を抜く\n毛蟹は「け」を「に」に変える\nナイフは「ふ」がないってこと\nうがいは「う」を「い」に変えるってことか\nそうすると「にいのこなんのせいちがせいかい」となる\n2位のコナンの聖地ってことか！好きなコナン映画ランキングあったぞ\n僕のコナンの映画ランキングは100万ドルの五稜星だから\n正解は北海道だね！\n\n「正解！北海道はまだ行ったことないから行ってみたいの！」'
   },
   {
     no: 2,
@@ -33,7 +33,7 @@ const QUIZ = [
   },
   {
     no: 4,
-    question: '「本場の博多ラーメンは美味しいよ！\n博多も行きたいね〜　私は行ったことあるけど笑」\n\n「でもイダ君の問題は私たちのプロフィールのことなんも入ってないね」\n\nプロフィールまで入れ問題作るの難しいよ…\n佑衣ちゃん問題作るの上手い\n\nプロフィールを入れて問題作るとなると、、、\nこんな感じかな？次の問題はこれ！',
+    question: '「本場の博多ラーメンは美味しいよ！\n博多も行きたいね〜　私は行ったことあるけど笑」\n\n「でもイダ君の問題はプロフィールのことなんも入ってないね」\n\nプロフィールまで入れ問題作るの難しいよ…\nゆいちゃん問題作るの上手いな…\n\nプロフィールを入れて問題作るとなると、、、\nこんな感じかな？次の問題はこれ！',
     image: '謎4.jpg',
     hint: '新郎新婦の漢字は色々なところに記載があるね',
     hint2: 'Webサイトにない情報はムービーや写真で確認できないかな？',
@@ -54,18 +54,18 @@ const QUIZ = [
 /* クイズ開始前のイントロメッセージ
    ▼ 内容を自由に変更してください */
 const QUIZ_INTRO_MESSAGE =
-  '僕、新郎 井田啓介。\n今日は一生に一度の結婚式。\nプロポーズしてからここまで怒涛の日々\n\n' +
+  '僕、新郎 イダケイスケ。\n今日は一生に一度の結婚式。\nプロポーズしてからここまで怒涛の日々\n\n' +
   'さあ今日が終わったら何をしようか…\n\n次のビックイベントは、、、\n新婚旅行…！！\n\n' +
-  'と言っても、いきたいところはたくさんあるし…\n佑衣ちゃんの希望を聞いて計画しなきゃ！\n\n '+
-  '僕と一緒に旅行先を決めてみませんか？\n\n最後まで時終わった人にはいいことがあるかもですよ' 
+  'と言っても、いきたいところはたくさんあるし…\nゆいちゃんの希望を聞いて計画しなきゃ！\n\n '+
+  '僕と一緒に旅行先を決めてみませんか？\n\n最後まで解き終わった人にはいいことがあるかもですよ！！' 
 
 /* 全問正解後の隠しメッセージ
    ▼ 内容を自由に変更してください */
 const QUIZ_CLEAR_MESSAGE =
   '無事謎解きも終わり旅行先も決まりました！\n行先は北海道の小樽、博多！\nどっちもまわらないと！\n\n' +
-  'ただ佑衣ちゃんがちょっとまだ悩んでるみたい、、、\n\n' +
+  'ただゆいちゃんがちょっとまだ悩んでるみたい、、、\n\n' +
   '「やっぱり新郎じゃなくて新婦にしとけばよかったな、、、\nうーん、どうしようかな」\n\n' +
-  'ここまで来たらなんとか佑衣ちゃんの気持ちを察したい！\n一緒にここまで解いてくれた皆さまなら佑衣ちゃんの本当の行きたいところが解けるはず！\n答えは教えてください！\n\n' +
+  'ここまで来たらなんとか佑衣ちゃんの気持ちを察したい！\n一緒にここまで解いてくれた皆さまならゆいちゃんの他の行きたいところが解けるはず！\n答えは教えてください！\n\n' +
   'あれ、ただ答える場所がないぞ、、\nどこか他に答えを入力できるところはあったかな、、、？';
 
 /* クイズの状態 */
@@ -205,7 +205,7 @@ function submitQuizAnswer(index) {
         <div class="quiz-correct-label">正解！</div>
         <div class="quiz-correct-exp">${QUIZ[index].explanation.replace(/\n/g, '<br>')}</div>
         <button class="quiz-next-btn" onclick="advanceQuiz(${index})">
-          ${isLast ? '隠しメッセージを見る 🎉' : '次の問題へ →'}
+          ${isLast ? 'ラスト問題？' : '次の問題へ →'}
         </button>
       </div>`;
     feedback.classList.add('show', 'correct');
@@ -213,7 +213,7 @@ function submitQuizAnswer(index) {
     feedback.innerHTML = `
       <div class="quiz-wrong">
         <div class="quiz-wrong-mark">❌</div>
-        <div class="quiz-wrong-label">惜しい！もう一度考えてみよう</div>
+        <div class="quiz-wrong-label">もう一度考えてみよう</div>
       </div>`;
     feedback.classList.add('show', 'wrong');
     input.classList.add('quiz-shake');
@@ -250,13 +250,11 @@ function showQuizClear() {
   const clearEl = document.createElement('div');
   clearEl.innerHTML = `
     <div class="quiz-clear">
-      <div class="quiz-clear-icon">🎉</div>
-      <div class="quiz-clear-title">全問正解！</div>
-      <div class="quiz-clear-sub">おめでとうございます</div>
+
       <div class="quiz-clear-divider"><span>✦</span></div>
       <div class="quiz-clear-message">${QUIZ_CLEAR_MESSAGE.replace(/\n/g, '<br>')}</div>
-      <div class="quiz-clear-sign">— 新郎・新婦より</div>
-      <button class="quiz-retry-all-btn" onclick="initQuiz()">もう一度挑戦する 🔄</button>
+
+    
     </div>
   `;
   container.appendChild(clearEl);

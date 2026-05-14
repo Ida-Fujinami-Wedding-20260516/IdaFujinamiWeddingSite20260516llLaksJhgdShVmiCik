@@ -212,14 +212,29 @@ function searchMessage() {
   const normalize = s => s.replace(/[\s　]+/g, '');
   const query = normalize(raw);
 
+  const SPECIAL_MESSAGES = {
+    '知床': { title: '謎解きfin', message: '正解です！\n佑衣ちゃんの本当に行きたかった場所は知床でした！\n\nここまで解いてくださった方、さすがです！！\n解けた皆さまは新郎新婦へとLINEで\n\n「お土産待ってます」\n\nと送ってください！\n披露宴中、披露宴後でも大丈夫です！', from: '' },
+    'しれとこ': { title: '謎解きfin', message: '正解です！\n佑衣ちゃんの本当に行きたかった場所は知床でした！\n\nここまで解いてくださった方、さすがです！！\n解けた皆さまは新郎新婦へとLINEで\n\n「お土産待ってます」\n\nと送ってください！\n披露宴中、披露宴後でも大丈夫です！', from: '' },
+  };
+
   let found = null, foundName = null;
 
-  for (const [name, data] of Object.entries(MESSAGES)) {
-    if (normalize(name) === query) { found = data; foundName = name; break; }
+  for (const [keyword, data] of Object.entries(SPECIAL_MESSAGES)) {
+    if (query.includes(normalize(keyword))) {
+      found = { message: data.message, from: data.from };
+      foundName = data.title;
+      break;
+    }
+  }
+
+  if (!found) {
+    for (const [name, data] of Object.entries(MESSAGES)) {
+      if (normalize(name) === query) { found = data; foundName = name; break; }
+    }
   }
 
   if (found) {
-    document.getElementById('msgResultName').textContent = foundName + ' 様';
+    document.getElementById('msgResultName').textContent = foundName ? foundName + ' 様' : '';
     document.getElementById('msgResultBody').innerHTML   = found.message.replace(/\n/g, '<br>');
     document.getElementById('msgResultSign').textContent = found.from;
     result.classList.add('show');
