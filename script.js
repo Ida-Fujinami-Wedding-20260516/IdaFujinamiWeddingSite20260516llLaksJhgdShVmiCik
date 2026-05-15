@@ -213,8 +213,8 @@ function searchMessage() {
   const query = normalize(raw);
 
   const SPECIAL_MESSAGES = {
-    '知床': { title: '謎解きfin', message: '正解です！\n佑衣ちゃんの本当に行きたかった場所は知床でした！\n\nここまで解いてくださった方、さすがです！！\n解けた皆さまは新郎新婦へとLINEで\n\n「お土産待ってます」\n\nと送ってください！\n披露宴中、披露宴後でも大丈夫です！', from: '' },
-    'しれとこ': { title: '謎解きfin', message: '正解です！\n佑衣ちゃんの本当に行きたかった場所は知床でした！\n\nここまで解いてくださった方、さすがです！！\n解けた皆さまは新郎新婦へとLINEで\n\n「お土産待ってます」\n\nと送ってください！\n披露宴中、披露宴後でも大丈夫です！', from: '' },
+    '知床': { title: '謎解きfin', message: '正解です！\n佑衣ちゃんの本当に行きたかった場所は知床でした！\n\nここまで解いてくださった方、さすがです！！\n解けた皆さまは新郎新婦へとLINEで\n\n「お土産待ってます」\n\nと送ってください！\n5月16日23時59分までに送ってくれるといいことがあるかも\n披露宴中、披露宴後でも可です', from: '' },
+    'しれとこ': { title: '謎解きfin', message: '正解です！\n佑衣ちゃんの本当に行きたかった場所は知床でした！\n\nここまで解いてくださった方、さすがです！！\n解けた皆さまは新郎新婦へとLINEで\n\n「お土産待ってます」\n\nと送ってください！\n5月16日23時59分までに送ってくれるといいことがあるかも\n披露宴中、披露宴後でも可です', from: '' },
   };
 
   let found = null, foundName = null;
@@ -234,7 +234,8 @@ function searchMessage() {
   }
 
   if (found) {
-    document.getElementById('msgResultName').textContent = foundName ? foundName + ' 様' : '';
+    const isSpecial = Object.values(SPECIAL_MESSAGES).some(d => d.title === foundName);
+    document.getElementById('msgResultName').textContent = foundName ? (isSpecial ? foundName : foundName + ' 様') : '';
     document.getElementById('msgResultBody').innerHTML   = found.message.replace(/\n/g, '<br>');
     document.getElementById('msgResultSign').textContent = found.from;
     result.classList.add('show');
